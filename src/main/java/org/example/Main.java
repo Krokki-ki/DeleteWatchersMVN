@@ -19,16 +19,14 @@ public class Main {
         // Укажите путь к ChromeDriver
         System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver_win32\\chromedriver.exe");
 
-        String myLogin, myPassword, jiraURL, jiraFilter = null;
-
         // Выбор способа авторизации
         ChoozeAuthentification chooze = new ChoozeAuthentification();
         String[] authData = chooze.choozeAuthMethod();
 
-        myLogin = authData[0];
-        myPassword = authData[1];
-        jiraURL = authData[2];
-        jiraFilter = authData[3];
+        String myLogin = authData[0];
+        String myPassword = authData[1];
+        String jiraURL = authData[2];
+        String jiraFilter = authData[3];
 
         MaskingOutput maskOutput = new MaskingOutput();
         System.out.println("Логин: " + maskOutput.maskLogin(myLogin));

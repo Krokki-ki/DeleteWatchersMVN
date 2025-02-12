@@ -41,7 +41,6 @@ public class ChoozeAuthentification {
     private String[] consoleAuth() {
         Scanner scanner = new Scanner(System.in);
         String[] authData = new String[4];
-        String password = null;
 
         System.out.print("Введите Ваш логин: ");
         authData[0] = scanner.nextLine();
