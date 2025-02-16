@@ -20,13 +20,22 @@ public class Main {
         System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver_win32\\chromedriver.exe");
 
         // Выбор способа авторизации
-        ChoozeAuthentification chooze = new ChoozeAuthentification();
-        String[] authData = chooze.choozeAuthMethod();
+        ChoozeAuthentification choose = new ChoozeAuthentification();
+        String[] authData = choose.choozeAuthMethod();
 
-        String myLogin = authData[0];
-        String myPassword = authData[1];
-        String jiraURL = authData[2];
-        String jiraFilter = authData[3];
+        // Объявляем переменные вне блока if
+        String myLogin, myPassword, jiraURL, jiraFilter = null;
+
+        // Проверяем, что authData не null
+        if (authData != null && authData.length == 4) {
+            myLogin = authData[0];
+            myPassword = authData[1];
+            jiraURL = authData[2];
+            jiraFilter = authData[3];
+        } else {
+            System.out.println("Ошибка: данные авторизации не были получены.");
+            return; // Завершаем программу, если данные не были получены
+        }
 
         MaskingOutput maskOutput = new MaskingOutput();
         System.out.println("Логин: " + maskOutput.maskLogin(myLogin));
@@ -35,8 +44,6 @@ public class Main {
         System.out.println("Фильтр Jira: " + authData[3]);
 
 
-
-        //////////////////////////////////////////////////////  Событие - Sign In   \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();        // задаём параметры открывающегося окна браузера (full screen)
         Waiting.waitUntil(2000);
@@ -70,7 +77,5 @@ public class Main {
         System.out.println("Конец программы на этапе смены представления");
 
         //driver.quit();
-
-
     }
 }
