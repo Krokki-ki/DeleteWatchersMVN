@@ -1,4 +1,4 @@
-package org.example;
+package core;
 
 import org.jline.reader.LineReader;
 import org.jline.reader.LineReaderBuilder;

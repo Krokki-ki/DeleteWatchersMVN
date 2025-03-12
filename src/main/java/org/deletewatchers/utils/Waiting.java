@@ -1,4 +1,4 @@
-package org.example;
+package core;
 
 public class Waiting {
     public static void waitUntil(int milliseconds) {

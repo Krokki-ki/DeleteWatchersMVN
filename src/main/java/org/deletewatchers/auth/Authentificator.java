@@ -1,4 +1,6 @@
-package org.example;
+package auth;
+
+import processing.Processing;
 
 import java.io.*;
 import java.util.Scanner;

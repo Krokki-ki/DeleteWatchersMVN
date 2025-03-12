@@ -1,8 +1,8 @@
-package org.example;
+package workspace;
 
 import java.util.Scanner;
 
-import static org.example.IsVPNConnected.isVPNConnected;
+import static workspace.IsVPNConnected.isVPNConnected;
 
 public class CheckWorkSpace {
     public static final String workSpaceNavigate = "Укажите типа Вашего рабочего места: \n1 - Локальное рабочее место \n2 - Удалённое рабочее место \nИли нажмите любую другую клавишу для прекращения программы \n";
