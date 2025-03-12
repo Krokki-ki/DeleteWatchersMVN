@@ -1,4 +1,4 @@
-package core;
+package utils;
 
 public class Waiting {
     public static void waitUntil(int milliseconds) {

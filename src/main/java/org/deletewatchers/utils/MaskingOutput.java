@@ -1,4 +1,4 @@
-package core;
+package utils;
 /// Персональный класс с методами, которые маскируют такие чувствительные данные, как логин и пароль
 
 public class MaskingOutput {

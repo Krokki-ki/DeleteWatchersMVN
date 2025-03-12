@@ -18,7 +18,7 @@ import java.util.Scanner;
 ///     Возвращает массив строк с данными.
 ///     Если файл не найден или произошла ошибка чтения, программа завершается.
 
-public class ChoozeAuthentification {
+public class Authentificator {
     public static final String authNavigate = "Выберите способ авторизации: \n1 - Ввод данных через консоль \n2 - Считывание данных из файла (файл должен быть подготовлен) \nИли нажмите любую клавишу для прекращения программы\n";
     public static final String invalidCodeBreak = "Неверный ввод. Завершение программы.\n";
 
@@ -32,6 +32,26 @@ public class ChoozeAuthentification {
     public static final String fileNotFound = "Файл не найден. Проверьте путь к файлу.\n";
     public static final String fileReadError = "Ошибка чтения файла.\n";
     public static final String loadDataSuccess = "Данные успешно загружены из файла.\n";
+
+    // Метод для аутентификации пользователя. Возвращает объект AuthData с данными для входа
+    public AuthData authenticate() {
+        // Получаем данные аутентификации через метод choozeAuthMethod
+        String[] authDataArray = choozeAuthMethod();
+
+        // Проверяем, что данные получены и их достаточно
+        if (authDataArray != null && authDataArray.length == 4) {
+            // Создаем и возвращаем объект AuthData
+            return new AuthData(
+                    authDataArray[0],   // логин
+                    authDataArray[1],   // пароль
+                    authDataArray[2],   // URL Jira
+                    authDataArray[3]    // фильтр Jira
+            );
+        } else {
+            // Если данные не получены, возвращаем null
+            return null;
+        }
+    }
 
     // Метод для выбора способа авторизации
     public String[] choozeAuthMethod() {

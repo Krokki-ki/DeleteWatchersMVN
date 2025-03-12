@@ -1,4 +1,4 @@
-package core;
+package processing;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

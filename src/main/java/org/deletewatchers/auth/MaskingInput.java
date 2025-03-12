@@ -1,4 +1,4 @@
-package core;
+package auth;
 
 import org.jline.reader.LineReader;
 import org.jline.reader.LineReaderBuilder;
